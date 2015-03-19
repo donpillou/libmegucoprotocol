@@ -16,11 +16,38 @@ typedef struct
 
 typedef struct
 {
-public:
   zlimdb_entity entity;
   double bid;
   double ask;
 } meguco_ticker_entity;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint16_t name_size;
+} meguco_bot_market_entity;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint16_t name_size;
+} meguco_bot_engine_entity;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint64_t bot_market_id;
+  uint8_t state;
+} meguco_user_market_entity;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint16_t name_size;
+  uint64_t bot_engine_id;
+  uint64_t bot_market_id;
+  uint8_t state;
+} meguco_user_session_entity;
 
 #pragma pack(pop)
 
