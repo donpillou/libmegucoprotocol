@@ -49,6 +49,16 @@ typedef struct
   uint8_t state;
 } meguco_user_session_entity;
 
+//todo: use this or remote it
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t state;
+  uint32_t pid;
+  uint32_t exit_code;
+  uint16_t cmd_size;
+} meguco_process_entity;
+
 #pragma pack(pop)
 
 #endif // _MEGUCO_PROTOCOL_H
