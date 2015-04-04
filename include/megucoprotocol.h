@@ -33,11 +33,19 @@ typedef struct
   uint16_t name_size;
 } meguco_bot_engine_entity;
 
+typedef enum
+{
+  meguco_user_market_stopped,
+  meguco_user_market_starting,
+  meguco_user_market_running,
+} meguco_user_market_state;
+
 typedef struct
 {
   zlimdb_entity entity;
   uint64_t bot_market_id;
   uint8_t state;
+  // todo: credentials
 } meguco_user_market_entity;
 
 typedef struct
