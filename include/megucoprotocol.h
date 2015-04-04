@@ -48,6 +48,13 @@ typedef struct
   // todo: credentials
 } meguco_user_market_entity;
 
+typedef enum
+{
+  meguco_user_session_stopped,
+  meguco_user_session_starting,
+  meguco_user_session_running,
+} meguco_user_session_state;
+
 typedef struct
 {
   zlimdb_entity entity;
