@@ -38,6 +38,7 @@ typedef enum
   meguco_user_market_stopped,
   meguco_user_market_starting,
   meguco_user_market_running,
+  meguco_user_market_stopping,
 } meguco_user_market_state;
 
 typedef struct
@@ -53,6 +54,7 @@ typedef enum
   meguco_user_session_stopped,
   meguco_user_session_starting,
   meguco_user_session_running,
+  meguco_user_session_stopping,
 } meguco_user_session_state;
 
 typedef struct
