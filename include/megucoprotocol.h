@@ -46,7 +46,9 @@ typedef struct
   zlimdb_entity entity;
   uint64_t bot_market_id;
   uint8_t state;
-  // todo: credentials
+  uint16_t user_name_size;
+  uint16_t key_size;
+  uint16_t secret_size;
 } meguco_user_market_entity;
 
 typedef enum
@@ -62,7 +64,7 @@ typedef struct
   zlimdb_entity entity;
   uint16_t name_size;
   uint64_t bot_engine_id;
-  uint64_t bot_market_id;
+  uint32_t user_market_id;
   uint8_t state;
 } meguco_user_session_entity;
 
