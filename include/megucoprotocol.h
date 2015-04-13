@@ -53,6 +53,26 @@ typedef struct
 
 typedef enum
 {
+  //meguco_user_market_order_draft,
+  meguco_user_market_order_opening,
+  meguco_user_market_order_open,
+  meguco_user_market_order_canceling,
+  meguco_user_market_order_canceled,
+  meguco_user_market_order_closed,
+  meguco_user_market_order_error,
+} meguco_user_market_order_state;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t state;
+  double price;
+  double amount;
+  uint64_t raw_id;
+} meguco_user_market_order_entity;
+
+typedef enum
+{
   meguco_user_session_stopped,
   meguco_user_session_starting,
   meguco_user_session_running,
@@ -62,7 +82,6 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint16_t name_size;
   uint64_t bot_engine_id;
   uint32_t user_market_id;
   uint8_t state;
