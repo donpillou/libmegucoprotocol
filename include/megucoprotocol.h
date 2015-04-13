@@ -62,12 +62,21 @@ typedef enum
   meguco_user_market_order_error,
 } meguco_user_market_order_state;
 
+
+typedef enum
+{
+  meguco_user_market_order_buy,
+  meguco_user_market_order_sell,
+} meguco_user_market_order_type;
+
 typedef struct
 {
   zlimdb_entity entity;
+  uint8_t type;
   uint8_t state;
   double price;
   double amount;
+  double total;
   uint64_t raw_id;
 } meguco_user_market_order_entity;
 
