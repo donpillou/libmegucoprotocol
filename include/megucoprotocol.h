@@ -62,7 +62,6 @@ typedef enum
   meguco_user_market_order_error,
 } meguco_user_market_order_state;
 
-
 typedef enum
 {
   meguco_user_market_order_buy,
@@ -79,6 +78,47 @@ typedef struct
   double total;
   uint64_t raw_id;
 } meguco_user_market_order_entity;
+
+typedef enum
+{
+  meguco_user_market_order_control_refresh,
+} meguco_user_market_order_control_code;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  double reserved_usd; // usd in open orders
+  double reserved_btc; // btc in open orders
+  double available_usd;
+  double available_btc;
+  double fee;
+} meguco_user_market_balance_entity;
+
+typedef enum
+{
+  meguco_user_market_balance_control_refresh,
+} meguco_user_market_balance_control_code;
+
+typedef enum
+{
+  meguco_user_market_transaction_buy,
+  meguco_user_market_transaction_sell,
+} meguco_user_market_transaction_type;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+  double price;
+  double amount;
+  double total;
+  uint64_t raw_id;
+} meguco_user_market_transaction_entity;
+
+typedef enum
+{
+  meguco_user_market_transaction_control_refresh,
+} meguco_user_market_transaction_control_code;
 
 typedef enum
 {
@@ -102,6 +142,20 @@ typedef struct
   uint32_t process_id;
   uint16_t cmd_size;
 } meguco_process_entity;
+
+typedef enum
+{
+  meguco_log_info,
+  meguco_log_warning,
+  meguco_log_error,
+} meguco_log_type;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+  uint16_t message_size;
+} meguco_log_entity;
 
 #pragma pack(pop)
 
