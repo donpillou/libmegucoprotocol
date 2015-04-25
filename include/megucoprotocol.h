@@ -77,6 +77,7 @@ typedef struct
   double amount;
   double total;
   uint64_t raw_id;
+  uint64_t timeout;
 } meguco_user_market_order_entity;
 
 typedef enum
@@ -122,6 +123,36 @@ typedef enum
 
 typedef enum
 {
+  meguco_user_session_asset_buy,
+  meguco_user_session_asset_sell,
+} meguco_user_session_asset_type;
+
+typedef enum
+{
+  meguco_user_session_asset_wait_buy,
+  meguco_user_session_asset_buying,
+  meguco_user_session_asset_wait_sell,
+  meguco_user_session_asset_selling,
+} meguco_user_session_asset_state;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+  uint8_t state;
+  int64_t date;
+  double price;
+  double invest_comm;
+  double invest_base;
+  double balance_comm;
+  double balance_base;
+  double profitable_price;
+  double flip_price;
+  uint64_t order_od;
+} meguco_user_session_asset_entity;
+
+typedef enum
+{
   meguco_user_session_stopped,
   meguco_user_session_starting,
   meguco_user_session_running,
@@ -135,6 +166,44 @@ typedef struct
   uint32_t user_market_id;
   uint8_t state;
 } meguco_user_session_entity;
+
+typedef enum Type
+{
+  meguco_user_session_property_number,
+  meguco_user_session_property_string,
+} meguco_user_session_property_type;
+
+typedef enum Flag
+{
+  meguco_user_session_property_none = 0x00,
+  meguco_user_session_property_read_only = 0x01,
+} meguco_user_session_property_flag;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+  uint32_t flags;
+  uint16_t name_size;
+  uint16_t value_size;
+  uint16_t unit_size;
+} meguco_user_session_property_entity;
+
+typedef enum
+{
+  meguco_user_session_marker_buy,
+  meguco_user_session_marker_sell,
+  meguco_user_session_marker_buy_attempt,
+  meguco_user_session_marker_sell_attempt,
+  meguco_user_session_marker_good_buy,
+  meguco_user_session_marker_good_sell,
+} meguco_user_session_marker_type;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+} meguco_user_session_marker_entity;
 
 typedef struct
 {
