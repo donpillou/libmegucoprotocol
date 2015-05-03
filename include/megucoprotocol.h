@@ -11,7 +11,7 @@ typedef struct
   zlimdb_entity entity;
   double price;
   double amount;
-  uint32_t flags;
+  uint32_t flags; // unused?
 } meguco_trade_entity;
 
 typedef struct
@@ -167,13 +167,13 @@ typedef struct
   uint8_t state;
 } meguco_user_session_entity;
 
-typedef enum Type
+typedef enum
 {
   meguco_user_session_property_number,
   meguco_user_session_property_string,
 } meguco_user_session_property_type;
 
-typedef enum Flag
+typedef enum
 {
   meguco_user_session_property_none = 0x00,
   meguco_user_session_property_read_only = 0x01,
