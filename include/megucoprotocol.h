@@ -208,7 +208,6 @@ typedef struct
 typedef struct
 {
   zlimdb_entity entity;
-  uint32_t process_id;
   uint16_t cmd_size;
 } meguco_process_entity;
 
