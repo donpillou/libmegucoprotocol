@@ -148,7 +148,7 @@ typedef struct
   double balance_base;
   double profitable_price;
   double flip_price;
-  uint64_t order_od;
+  uint64_t order_id;
 } meguco_user_session_asset_entity;
 
 typedef enum
