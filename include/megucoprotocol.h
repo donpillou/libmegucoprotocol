@@ -159,12 +159,19 @@ typedef enum
   meguco_user_session_stopping,
 } meguco_user_session_state;
 
+typedef enum
+{
+  meguco_user_session_live,
+  meguco_user_session_simulation,
+} meguco_user_session_mode;
+
 typedef struct
 {
   zlimdb_entity entity;
   uint64_t bot_engine_id;
   uint32_t user_market_id;
   uint8_t state;
+  uint8_t mode;
 } meguco_user_session_entity;
 
 typedef enum
