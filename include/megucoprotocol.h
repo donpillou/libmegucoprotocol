@@ -25,13 +25,13 @@ typedef struct
 {
   zlimdb_entity entity;
   uint16_t name_size;
-} meguco_bot_market_entity;
+} meguco_bot_market_entity; // todo: rename in meguco_market_entity
 
 typedef struct
 {
   zlimdb_entity entity;
   uint16_t name_size;
-} meguco_bot_engine_entity;
+} meguco_bot_engine_entity; // todo: rename in meguco_bot_entity
 
 typedef enum
 {
@@ -49,7 +49,7 @@ typedef struct
   uint16_t user_name_size;
   uint16_t key_size;
   uint16_t secret_size;
-} meguco_user_market_entity;
+} meguco_user_market_entity; // todo: rename in meguco_user_broker_entity
 
 typedef enum
 {
@@ -78,7 +78,7 @@ typedef struct
   double total;
   uint64_t raw_id;
   uint64_t timeout;
-} meguco_user_market_order_entity;
+} meguco_user_market_order_entity; // todo: rename in meguco_user_broker_order_entity
 
 typedef enum
 {
@@ -93,7 +93,7 @@ typedef struct
   double available_usd;
   double available_btc;
   double fee;
-} meguco_user_market_balance_entity;
+} meguco_user_market_balance_entity; // todo: rename in meguco_user_broker_balance_entity
 
 typedef enum
 {
@@ -114,7 +114,7 @@ typedef struct
   double amount;
   double total;
   uint64_t raw_id;
-} meguco_user_market_transaction_entity;
+} meguco_user_market_transaction_entity; // todo: rename in meguco_user_broker_transaction_entity
 
 typedef enum
 {
