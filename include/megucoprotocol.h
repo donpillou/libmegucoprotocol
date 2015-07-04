@@ -53,6 +53,13 @@ typedef struct
 
 typedef enum
 {
+  meguco_user_market_control_refresh_orders,
+  meguco_user_market_control_refresh_transactions,
+  meguco_user_market_control_refresh_balance,
+} meguco_user_market_control_code;
+
+typedef enum
+{
   //meguco_user_market_order_draft,
   meguco_user_market_order_opening,
   meguco_user_market_order_open,
@@ -80,11 +87,6 @@ typedef struct
   uint64_t timeout;
 } meguco_user_market_order_entity; // todo: rename in meguco_user_broker_order_entity
 
-typedef enum
-{
-  meguco_user_market_order_control_refresh,
-} meguco_user_market_order_control_code;
-
 typedef struct
 {
   zlimdb_entity entity;
@@ -94,11 +96,6 @@ typedef struct
   double available_btc;
   double fee;
 } meguco_user_market_balance_entity; // todo: rename in meguco_user_broker_balance_entity
-
-typedef enum
-{
-  meguco_user_market_balance_control_refresh,
-} meguco_user_market_balance_control_code;
 
 typedef enum
 {
@@ -115,11 +112,6 @@ typedef struct
   double total;
   uint64_t raw_id;
 } meguco_user_market_transaction_entity; // todo: rename in meguco_user_broker_transaction_entity
-
-typedef enum
-{
-  meguco_user_market_transaction_control_refresh,
-} meguco_user_market_transaction_control_code;
 
 typedef enum
 {
