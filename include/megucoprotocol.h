@@ -60,20 +60,22 @@ typedef enum
 
 typedef enum
 {
-  //meguco_user_market_order_draft,
-  meguco_user_market_order_opening,
-  meguco_user_market_order_open,
-  meguco_user_market_order_canceling,
-  meguco_user_market_order_canceled,
-  meguco_user_market_order_closed,
-  meguco_user_market_order_error,
-} meguco_user_market_order_state;
+  meguco_user_broker_order_opening,
+  meguco_user_broker_order_open,
+  meguco_user_broker_order_canceling,
+  meguco_user_broker_order_canceled,
+  meguco_user_broker_order_updating,
+  meguco_user_broker_order_closed,
+  meguco_user_broker_order_removing,
+  meguco_user_broker_order_error,
+  //meguco_user_broker_order_draft,
+} meguco_user_broker_order_state;
 
 typedef enum
 {
-  meguco_user_market_order_buy,
-  meguco_user_market_order_sell,
-} meguco_user_market_order_type;
+  meguco_user_broker_order_buy,
+  meguco_user_broker_order_sell,
+} meguco_user_broker_order_type;
 
 typedef struct
 {
@@ -85,7 +87,19 @@ typedef struct
   double total;
   uint64_t raw_id;
   uint64_t timeout;
-} meguco_user_market_order_entity; // todo: rename in meguco_user_broker_order_entity
+} meguco_user_broker_order_entity;
+
+typedef enum
+{
+  meguco_user_broker_order_control_cancel,
+  meguco_user_broker_order_control_update,
+} meguco_user_broker_order_control_code;
+
+typedef struct
+{
+  double price;
+  double amount;
+} meguco_user_broker_order_control_update_params;
 
 typedef struct
 {
