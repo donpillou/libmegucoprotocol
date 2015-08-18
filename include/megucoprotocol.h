@@ -167,6 +167,7 @@ typedef enum
 
 typedef enum
 {
+  meguco_user_session_none,
   meguco_user_session_live,
   meguco_user_session_simulation,
 } meguco_user_session_mode;
