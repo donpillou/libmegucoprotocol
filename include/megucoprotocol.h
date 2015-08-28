@@ -60,13 +60,13 @@ typedef enum
 
 typedef enum
 {
-  meguco_user_broker_order_opening,
+  meguco_user_broker_order_submitting,
   meguco_user_broker_order_open,
-  meguco_user_broker_order_canceling,
+  //meguco_user_broker_order_canceling, // ??
   meguco_user_broker_order_canceled,
-  meguco_user_broker_order_updating,
+  //meguco_user_broker_order_updating, // ??
   meguco_user_broker_order_closed,
-  meguco_user_broker_order_removing,
+  //meguco_user_broker_order_removing, // ??
   meguco_user_broker_order_error,
   //meguco_user_broker_order_draft,
 } meguco_user_broker_order_state;
@@ -135,6 +135,7 @@ typedef enum
 
 typedef enum
 {
+  meguco_user_session_asset_submitting,
   meguco_user_session_asset_wait_buy,
   meguco_user_session_asset_buying,
   meguco_user_session_asset_wait_sell,
@@ -146,7 +147,6 @@ typedef struct
   zlimdb_entity entity;
   uint8_t type;
   uint8_t state;
-  int64_t date;
   double price;
   double invest_comm;
   double invest_base;
@@ -156,6 +156,11 @@ typedef struct
   double flip_price;
   uint64_t order_id;
 } meguco_user_session_asset_entity;
+
+typedef enum
+{
+  meguco_user_session_asset_control_update,
+} meguco_user_session_asset_control_code;
 
 typedef enum
 {
@@ -175,11 +180,19 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
+  uint16_t name_size;
   uint64_t bot_engine_id;
   uint32_t user_market_id;
   uint8_t state;
   uint8_t mode;
 } meguco_user_session_entity;
+
+typedef enum
+{
+  meguco_user_session_control_start_live,
+  meguco_user_session_control_start_simulation,
+  meguco_user_session_control_stop,
+} meguco_user_session_control_code;
 
 typedef enum
 {
@@ -202,6 +215,16 @@ typedef struct
   uint16_t value_size;
   uint16_t unit_size;
 } meguco_user_session_property_entity;
+
+typedef enum
+{
+  meguco_user_session_property_control_update,
+} meguco_user_session_property_control_code;
+
+typedef struct
+{
+  uint16_t value_size;
+} meguco_user_session_property_control_update_params;
 
 typedef enum
 {
