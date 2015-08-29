@@ -35,11 +35,11 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_market_stopped,
-  meguco_user_market_starting,
-  meguco_user_market_running,
-  meguco_user_market_stopping,
-} meguco_user_market_state;
+  meguco_user_broker_stopped,
+  meguco_user_broker_starting,
+  meguco_user_broker_running,
+  meguco_user_broker_stopping,
+} meguco_user_broker_state;
 
 typedef struct
 {
@@ -49,14 +49,14 @@ typedef struct
   uint16_t user_name_size;
   uint16_t key_size;
   uint16_t secret_size;
-} meguco_user_market_entity; // todo: rename in meguco_user_broker_entity
+} meguco_user_broker_entity; // todo: rename in meguco_user_broker_entity
 
 typedef enum
 {
-  meguco_user_market_control_refresh_orders,
-  meguco_user_market_control_refresh_transactions,
-  meguco_user_market_control_refresh_balance,
-} meguco_user_market_control_code;
+  meguco_user_broker_control_refresh_orders,
+  meguco_user_broker_control_refresh_transactions,
+  meguco_user_broker_control_refresh_balance,
+} meguco_user_broker_control_code;
 
 typedef enum
 {
@@ -109,13 +109,13 @@ typedef struct
   double available_usd;
   double available_btc;
   double fee;
-} meguco_user_market_balance_entity; // todo: rename in meguco_user_broker_balance_entity
+} meguco_user_broker_balance_entity; // todo: rename in meguco_user_broker_balance_entity
 
 typedef enum
 {
-  meguco_user_market_transaction_buy,
-  meguco_user_market_transaction_sell,
-} meguco_user_market_transaction_type;
+  meguco_user_broker_transaction_buy,
+  meguco_user_broker_transaction_sell,
+} meguco_user_broker_transaction_type;
 
 typedef struct
 {
@@ -125,7 +125,7 @@ typedef struct
   double amount;
   double total;
   uint64_t raw_id;
-} meguco_user_market_transaction_entity; // todo: rename in meguco_user_broker_transaction_entity
+} meguco_user_broker_transaction_entity; // todo: rename in meguco_user_broker_transaction_entity
 
 typedef enum
 {
