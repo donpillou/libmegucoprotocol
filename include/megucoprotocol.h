@@ -36,9 +36,9 @@ typedef struct
 typedef enum
 {
   meguco_user_broker_stopped,
-  meguco_user_broker_starting,
+  //meguco_user_broker_starting,
   meguco_user_broker_running,
-  meguco_user_broker_stopping,
+  //meguco_user_broker_stopping,
 } meguco_user_broker_state;
 
 typedef struct
@@ -165,9 +165,9 @@ typedef enum
 typedef enum
 {
   meguco_user_session_stopped,
-  meguco_user_session_starting,
+  //meguco_user_session_starting,
   meguco_user_session_running,
-  meguco_user_session_stopping,
+  //meguco_user_session_stopping,
 } meguco_user_session_state;
 
 typedef enum
