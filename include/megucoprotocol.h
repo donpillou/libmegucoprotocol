@@ -25,13 +25,13 @@ typedef struct
 {
   zlimdb_entity entity;
   uint16_t name_size;
-} meguco_bot_market_entity; // todo: rename in meguco_market_entity
+} meguco_broker_type_entity;
 
 typedef struct
 {
   zlimdb_entity entity;
   uint16_t name_size;
-} meguco_bot_engine_entity; // todo: rename in meguco_bot_entity
+} meguco_bot_engine_entity; // todo: rename in meguco_bot_type_entity
 
 typedef enum
 {
