@@ -44,7 +44,7 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint64_t bot_market_id; // todo: rename
+  uint64_t broker_type_id;
   uint8_t state;
   uint16_t user_name_size;
   uint16_t key_size;
@@ -181,8 +181,8 @@ typedef struct
 {
   zlimdb_entity entity;
   uint16_t name_size;
-  uint64_t bot_engine_id;
-  uint32_t user_market_id;
+  uint64_t bot_type_id;
+  uint32_t broker_id;
   uint8_t state;
   uint8_t mode;
 } meguco_user_session_entity;
