@@ -242,6 +242,12 @@ typedef struct
 
 typedef enum
 {
+  meguco_process_control_start,
+  meguco_process_control_stop,
+} meguco_process_control_code;
+
+typedef enum
+{
   meguco_log_info,
   meguco_log_warning,
   meguco_log_error,
