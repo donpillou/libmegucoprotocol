@@ -35,6 +35,14 @@ typedef struct
 
 typedef enum
 {
+  meguco_user_control_create_broker,
+  meguco_user_control_remove_broker,
+  meguco_user_control_create_session,
+  meguco_user_control_remove_session,
+} meguco_user_control_code;
+
+typedef enum
+{
   meguco_user_broker_stopped,
   meguco_user_broker_running,
 } meguco_user_broker_state;
