@@ -64,6 +64,8 @@ typedef enum
   meguco_user_broker_control_refresh_orders,
   meguco_user_broker_control_refresh_transactions,
   meguco_user_broker_control_refresh_balance,
+  meguco_user_broker_control_create_order,
+  meguco_user_broker_control_remove_order,
 } meguco_user_broker_control_code;
 
 typedef enum
@@ -196,6 +198,8 @@ typedef enum
   meguco_user_session_control_start_live,
   meguco_user_session_control_start_simulation,
   meguco_user_session_control_stop,
+  meguco_user_session_control_create_asset,
+  meguco_user_session_control_remove_asset,
 } meguco_user_session_control_code;
 
 typedef enum
