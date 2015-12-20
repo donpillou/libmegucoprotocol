@@ -65,7 +65,6 @@ typedef enum
   meguco_user_broker_control_refresh_transactions,
   meguco_user_broker_control_refresh_balance,
   meguco_user_broker_control_create_order,
-  meguco_user_broker_control_remove_order,
 } meguco_user_broker_control_code;
 
 typedef enum
@@ -99,6 +98,7 @@ typedef enum
 {
   meguco_user_broker_order_control_cancel,
   meguco_user_broker_order_control_update,
+  meguco_user_broker_order_control_remove,
 } meguco_user_broker_order_control_code;
 
 typedef struct
