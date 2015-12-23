@@ -103,6 +103,13 @@ typedef enum
 
 typedef struct
 {
+  double price;
+  double amount;
+  double total;
+} meguco_user_broker_order_control_update_params;
+
+typedef struct
+{
   zlimdb_entity entity;
   double reserved_usd; // usd in open orders
   double reserved_btc; // btc in open orders
@@ -160,7 +167,13 @@ typedef struct
 typedef enum
 {
   meguco_user_session_asset_control_update,
+  meguco_user_session_asset_control_remove,
 } meguco_user_session_asset_control_code;
+
+typedef struct
+{
+  double flip_price;
+} meguco_user_session_asset_control_update_params;
 
 typedef enum
 {
@@ -222,6 +235,11 @@ typedef enum
 {
   meguco_user_session_property_control_update,
 } meguco_user_session_property_control_code;
+
+typedef struct
+{
+  uint16_t value_size;
+} meguco_user_session_property_control_update_params;
 
 typedef enum
 {
