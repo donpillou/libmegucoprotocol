@@ -162,6 +162,7 @@ typedef struct
   double profitable_price;
   double flip_price;
   uint64_t order_id;
+  int64_t time; // last transaction time
 } meguco_user_session_asset_entity;
 
 typedef enum
