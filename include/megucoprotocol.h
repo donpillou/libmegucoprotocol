@@ -96,7 +96,7 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_broker_order_control_cancel,
+  meguco_user_broker_order_control_cancel, // todo: move all this to meguco_user_broker_control_code
   meguco_user_broker_order_control_update,
   meguco_user_broker_order_control_remove,
 } meguco_user_broker_order_control_code;
@@ -136,48 +136,6 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_session_asset_buy,
-  meguco_user_session_asset_sell,
-} meguco_user_session_asset_type;
-
-typedef enum
-{
-  meguco_user_session_asset_submitting,
-  meguco_user_session_asset_wait_buy,
-  meguco_user_session_asset_buying,
-  meguco_user_session_asset_wait_sell,
-  meguco_user_session_asset_selling,
-} meguco_user_session_asset_state;
-
-typedef struct
-{
-  zlimdb_entity entity;
-  uint8_t type;
-  uint8_t state;
-  double price;
-  double invest_comm;
-  double invest_base;
-  double balance_comm;
-  double balance_base;
-  double profitable_price;
-  double flip_price;
-  uint64_t order_id;
-  int64_t time; // last transaction time
-} meguco_user_session_asset_entity;
-
-typedef enum
-{
-  meguco_user_session_asset_control_update,
-  meguco_user_session_asset_control_remove,
-} meguco_user_session_asset_control_code;
-
-typedef struct
-{
-  double flip_price;
-} meguco_user_session_asset_control_update_params;
-
-typedef enum
-{
   meguco_user_session_stopped,
   meguco_user_session_stopping,
   meguco_user_session_starting,
@@ -212,6 +170,48 @@ typedef enum
 
 typedef enum
 {
+  meguco_user_session_asset_buy,
+  meguco_user_session_asset_sell,
+} meguco_user_session_asset_type;
+
+typedef enum
+{
+  meguco_user_session_asset_submitting,
+  meguco_user_session_asset_wait_buy,
+  meguco_user_session_asset_buying,
+  meguco_user_session_asset_wait_sell,
+  meguco_user_session_asset_selling,
+} meguco_user_session_asset_state;
+
+typedef struct
+{
+  zlimdb_entity entity;
+  uint8_t type;
+  uint8_t state;
+  double price;
+  double invest_comm;
+  double invest_base;
+  double balance_comm;
+  double balance_base;
+  double profitable_price;
+  double flip_price;
+  uint64_t order_id;
+  int64_t time; // last transaction time
+} meguco_user_session_asset_entity;
+
+typedef enum
+{
+  meguco_user_session_asset_control_update, // todo: move all this to meguco_user_session_control_code
+  meguco_user_session_asset_control_remove,
+} meguco_user_session_asset_control_code;
+
+typedef struct
+{
+  double flip_price;
+} meguco_user_session_asset_control_update_params;
+
+typedef enum
+{
   meguco_user_session_property_number,
   meguco_user_session_property_string,
 } meguco_user_session_property_type;
@@ -234,7 +234,7 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_session_property_control_update,
+  meguco_user_session_property_control_update, // todo: move all this to meguco_user_session_control_code
 } meguco_user_session_property_control_code;
 
 typedef struct
