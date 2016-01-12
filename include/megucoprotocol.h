@@ -39,6 +39,8 @@ typedef enum
   meguco_user_control_remove_broker,
   meguco_user_control_create_session,
   meguco_user_control_remove_session,
+  meguco_user_control_start_session,
+  meguco_user_control_stop_session,
 } meguco_user_control_code;
 
 typedef enum
@@ -65,6 +67,9 @@ typedef enum
   meguco_user_broker_control_refresh_transactions,
   meguco_user_broker_control_refresh_balance,
   meguco_user_broker_control_create_order,
+  meguco_user_broker_control_cancel_order,
+  meguco_user_broker_control_update_order,
+  meguco_user_broker_control_remove_order,
 } meguco_user_broker_control_code;
 
 typedef enum
@@ -93,13 +98,6 @@ typedef struct
   uint64_t raw_id;
   uint64_t timeout;
 } meguco_user_broker_order_entity;
-
-typedef enum
-{
-  meguco_user_broker_order_control_cancel, // todo: move all this to meguco_user_broker_control_code
-  meguco_user_broker_order_control_update,
-  meguco_user_broker_order_control_remove,
-} meguco_user_broker_order_control_code;
 
 typedef struct
 {
@@ -161,12 +159,21 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_session_control_start_live,
-  meguco_user_session_control_start_simulation,
-  meguco_user_session_control_stop,
   meguco_user_session_control_create_asset,
   meguco_user_session_control_remove_asset,
+  meguco_user_session_control_update_asset,
+  meguco_user_session_control_update_property,
 } meguco_user_session_control_code;
+
+typedef struct
+{
+  uint16_t value_size;
+} meguco_user_session_control_update_property_params;
+
+typedef struct
+{
+  double flip_price;
+} meguco_user_session_control_update_asset_params;
 
 typedef enum
 {
@@ -201,17 +208,6 @@ typedef struct
 
 typedef enum
 {
-  meguco_user_session_asset_control_update, // todo: move all this to meguco_user_session_control_code
-  meguco_user_session_asset_control_remove,
-} meguco_user_session_asset_control_code;
-
-typedef struct
-{
-  double flip_price;
-} meguco_user_session_asset_control_update_params;
-
-typedef enum
-{
   meguco_user_session_property_number,
   meguco_user_session_property_string,
 } meguco_user_session_property_type;
@@ -231,16 +227,6 @@ typedef struct
   uint16_t value_size;
   uint16_t unit_size;
 } meguco_user_session_property_entity;
-
-typedef enum
-{
-  meguco_user_session_property_control_update, // todo: move all this to meguco_user_session_control_code
-} meguco_user_session_property_control_code;
-
-typedef struct
-{
-  uint16_t value_size;
-} meguco_user_session_property_control_update_params;
 
 typedef enum
 {
