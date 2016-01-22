@@ -76,8 +76,11 @@ typedef enum
 {
   meguco_user_broker_order_submitting,
   meguco_user_broker_order_open,
+  // todo: meguco_user_broker_order_canceling
   meguco_user_broker_order_canceled,
+  // todo: meguco_user_broker_order_updating
   meguco_user_broker_order_closed,
+  // todo: meguco_user_broker_order_removing
   meguco_user_broker_order_error,
 } meguco_user_broker_order_state;
 
