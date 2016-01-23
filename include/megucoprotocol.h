@@ -72,6 +72,13 @@ typedef enum
   meguco_user_broker_control_remove_order,
 } meguco_user_broker_control_code;
 
+typedef struct
+{
+  double price;
+  double amount;
+  double total;
+} meguco_user_broker_control_update_order_params;
+
 typedef enum
 {
   meguco_user_broker_order_submitting,
@@ -101,13 +108,6 @@ typedef struct
   uint64_t raw_id;
   uint64_t timeout;
 } meguco_user_broker_order_entity;
-
-typedef struct
-{
-  double price;
-  double amount;
-  double total;
-} meguco_user_broker_order_control_update_params;
 
 typedef struct
 {
