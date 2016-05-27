@@ -100,13 +100,13 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint8_t type;
-  uint8_t state;
   double price;
   double amount;
   double total;
   uint64_t raw_id;
   uint64_t timeout;
+  uint8_t type;
+  uint8_t state;
 } meguco_user_broker_order_entity;
 
 typedef struct
@@ -128,11 +128,11 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint8_t type;
   double price;
   double amount;
   double total;
   uint64_t raw_id;
+  uint8_t type;
 } meguco_user_broker_transaction_entity;
 
 typedef enum
@@ -196,8 +196,6 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint8_t type;
-  uint8_t state;
   double price;
   double invest_comm;
   double invest_base;
@@ -207,6 +205,8 @@ typedef struct
   double flip_price;
   uint64_t order_id;
   int64_t time; // last transaction time
+  uint8_t type;
+  uint8_t state;
 } meguco_user_session_asset_entity;
 
 typedef enum
@@ -224,8 +224,8 @@ typedef enum
 typedef struct
 {
   zlimdb_entity entity;
-  uint8_t type;
   uint32_t flags;
+  uint8_t type;
   uint16_t name_size;
   uint16_t value_size;
   uint16_t unit_size;
