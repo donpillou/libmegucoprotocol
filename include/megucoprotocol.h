@@ -204,7 +204,7 @@ typedef struct
   double profitable_price;
   double flip_price;
   uint64_t order_id;
-  int64_t lastTransactionTime;
+  int64_t last_transaction_time;
   uint8_t type;
   uint8_t state;
 } meguco_user_session_asset_entity;
