@@ -270,8 +270,9 @@ typedef struct
 {
   zlimdb_entity entity;
   uint8_t type;
+  int64_t time;
   uint16_t message_size;
-} meguco_log_entity; // todo: rename meguco_session_message_entity
+} meguco_log_entity;
 
 #pragma pack(pop)
 
